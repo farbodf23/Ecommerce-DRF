@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import get_user_model
 from rest_framework.generics import RetrieveUpdateAPIView
+from rest_framework.filters import OrderingFilter
 from .models import Profile, Cart
 from .serializers import PublicProfileSerializer, OwnerProfileSerializer, CartSerializer
 from .permissions import IsOwnerOrReadOnly, IsOwnerOnly
@@ -34,6 +35,8 @@ class CartDetail(RetrieveUpdateAPIView):
     serializer_class = CartSerializer
     queryset = Cart.objects.all()
     permission_classes = [IsOwnerOnly]
+    filter_backends = [OrderingFilter]
+    ordering_fields = ["product_price"]
 
     def get_object(self):
         username = self.kwargs['name']
