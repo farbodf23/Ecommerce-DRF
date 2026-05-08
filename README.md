@@ -1,6 +1,6 @@
 # 🛒 E-Commerce REST API
 
-A full-featured e-commerce backend built with **Django REST Framework**.  
+My very first DRF project.A full-featured e-commerce backend built with **Django REST Framework**.  
 This project was built as a hands-on learning exercise and now includes user profiles, shopping carts, advanced filtering, object-level permissions, and interactive API documentation.
 
 ## 🚀 Project Overview
