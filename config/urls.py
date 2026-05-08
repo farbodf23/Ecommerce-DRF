@@ -28,6 +28,7 @@ from rest_framework.permissions import AllowAny
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("products.urls")),
+    path("user/", include("users.urls")),
 
     # Schema generation (JSON / YAML)
     path('api/schema/', SpectacularAPIView.as_view(
